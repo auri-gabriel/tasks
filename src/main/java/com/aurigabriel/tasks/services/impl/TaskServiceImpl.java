@@ -7,6 +7,7 @@ import com.aurigabriel.tasks.domain.entities.TaskStatus;
 import com.aurigabriel.tasks.repositories.TaskListRepository;
 import com.aurigabriel.tasks.repositories.TaskRepository;
 import com.aurigabriel.tasks.services.TaskService;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -102,5 +103,11 @@ public class TaskServiceImpl implements TaskService {
         existingTask.setUpdated(LocalDateTime.now());
 
         return taskRepository.save(existingTask);
+    }
+
+    @Transactional
+    @Override
+    public void deleteTask(UUID taskListId, UUID taskId) {
+        taskRepository.deleteByTaskListIdAndId(taskListId, taskId);
     }
 }
