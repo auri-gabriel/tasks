@@ -34,7 +34,7 @@ public class TaskListServiceImpl implements TaskListService {
 
         LocalDateTime now = LocalDateTime.now();
 
-        taskListRepository.save(new TaskList(
+        return taskListRepository.save(new TaskList(
                 null,
                 taskList.getTitle(),
                 taskList.getDescription(),
@@ -43,7 +43,5 @@ public class TaskListServiceImpl implements TaskListService {
                 now
 
         ));
-
-        return null;
     }
 }
