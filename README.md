@@ -16,6 +16,7 @@ A **Task Tracker API** built with **Spring Boot** and **Java 21** to help you ma
 - Spring Boot
 - Spring Web
 - Maven
+- PostgreSQL
 
 ## 📁 Project Structure
 
